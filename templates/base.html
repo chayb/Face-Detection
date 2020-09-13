@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Face Detection</title>
+</head>
+<body>
+    <h1>Welcome to Face Detection App</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="image" id="upload" required="true">
+        <input type="submit" value="upload">  
+
+    </form>
+    {% if fileupload %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Uploaded Image</h4><br>
+                        <img src="{{ url_for('static',filename='uploads/')}}{{ fname }}" alt="face detection" width= "{{ w }}", height="350">
+
+                </div>
+                <div class="col-md-6">  
+                    <h4>Face Detected</h4><br>
+                        <img src="{{ url_for('static',filename='detect/')}}{{ fname }}" alt="face detection" width = "{{ w }}",height="350">
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+</body>
+</html>
